@@ -3,14 +3,14 @@ const axios = require('axios');
 module.exports = async (req, res) => {
     if (req.method !== 'GET') {
         return res.status(405).json({
+            error: "Method not allowed",
+            success: false,
             credits: {
                 dev: "Paras (Aotpy)",
                 contact: "https://t.me/Aotpy",
                 channel: "https://t.me/obitostuffs",
                 portfolio: "https://Aotpy.vercel.app"
-            },
-            error: "Method not allowed",
-            success: false
+            }
         });
     }
 
@@ -18,14 +18,14 @@ module.exports = async (req, res) => {
 
     if (!username) {
         return res.status(400).json({
+            error: "Username is required. Usage: /api/github?username=bitaimkingfree",
+            success: false,
             credits: {
                 dev: "Paras (Aotpy)",
                 contact: "https://t.me/Aotpy",
                 channel: "https://t.me/obitostuffs",
                 portfolio: "https://Aotpy.vercel.app"
-            },
-            error: "Username is required",
-            success: false
+            }
         });
     }
 
@@ -34,13 +34,6 @@ module.exports = async (req, res) => {
         const userData = response.data;
 
         const formattedResponse = {
-            credits: {
-                dev: "Paras (Aotpy)",
-                contact: "https://t.me/Aotpy",
-                channel: "https://t.me/obitostuffs",
-                portfolio: "https://Aotpy.vercel.app",
-                api: "GitHub Info API v1.0"
-            },
             data: {
                 bio: userData.bio || null,
                 blog: userData.blog || "",
@@ -56,7 +49,14 @@ module.exports = async (req, res) => {
                 public_repos: userData.public_repos,
                 username: userData.login
             },
-            success: true
+            success: true,
+            credits: {
+                dev: "Paras (Aotpy)",
+                contact: "https://t.me/Aotpy",
+                channel: "https://t.me/obitostuffs",
+                portfolio: "https://Aotpy.vercel.app",
+                api: "GitHub Info API v1.0"
+            }
         };
 
         res.status(200).json(formattedResponse);
@@ -64,27 +64,27 @@ module.exports = async (req, res) => {
     } catch (error) {
         if (error.response && error.response.status === 404) {
             res.status(404).json({
+                data: null,
+                success: false,
+                error: "User not found",
                 credits: {
                     dev: "Paras (Aotpy)",
                     contact: "https://t.me/Aotpy",
                     channel: "https://t.me/obitostuffs",
                     portfolio: "https://Aotpy.vercel.app"
-                },
-                data: null,
-                success: false,
-                error: "User not found"
+                }
             });
         } else {
             res.status(500).json({
+                data: null,
+                success: false,
+                error: "Failed to fetch GitHub user data",
                 credits: {
                     dev: "Paras (Aotpy)",
                     contact: "https://t.me/Aotpy",
                     channel: "https://t.me/obitostuffs",
                     portfolio: "https://Aotpy.vercel.app"
-                },
-                data: null,
-                success: false,
-                error: "Failed to fetch GitHub user data"
+                }
             });
         }
     }
