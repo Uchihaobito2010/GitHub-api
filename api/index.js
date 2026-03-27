@@ -27,8 +27,8 @@ module.exports = (req, res) => {
             }
         },
         usage: {
-            base_url: "https://info-tobi-api.vercel.app",
-            example_curl: "curl 'https://info-tobi-api.vercel.app/api/github?username=Aotpy'"
+            base_url: "https://info-github-api.vercel.app",
+            example_curl: "curl 'https://info-github-api.vercel.app/api/github?username=Aotpy'"
         },
         credits: {
             dev: "Paras (Aotpy)",
