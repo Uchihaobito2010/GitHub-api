@@ -20,7 +20,7 @@ module.exports = (req, res) => {
                         description: "GitHub username"
                     }
                 },
-                example: "/api/github?username=bitaimkingfree",
+                example: "/api/github?username=Aotpy",
                 response_format: {
                     credits: {},
                     data: {},
@@ -34,8 +34,8 @@ module.exports = (req, res) => {
             }
         },
         usage: {
-            base_url: "https://your-domain.vercel.app",
-            example_curl: "curl 'https://your-domain.vercel.app/api/github?username=bitaimkingfree'"
+            base_url: "https://info-github-api.vercel.app",
+            example_curl: "curl 'https://info-github-api.vercel.app/api/github?username=Aotpy'"
         }
     });
 };
