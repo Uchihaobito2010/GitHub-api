@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "functions": {
+    "api/github.js": {
+      "maxDuration": 10
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/github",
+      "dest": "/api/github.js"
+    }
+  ]
+}
