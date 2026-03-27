@@ -2,7 +2,7 @@
   "name": "github-info-api",
   "version": "1.0.0",
   "description": "GitHub Info API by Paras (Aotpy)",
-  "main": "api/github.js",
+  "main": "api/index.js",
   "author": "Paras (Aotpy)",
   "license": "MIT",
   "dependencies": {
