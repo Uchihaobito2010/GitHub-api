@@ -2,13 +2,6 @@ module.exports = (req, res) => {
     res.status(200).json({
         name: "GitHub Info API",
         description: "A simple API to fetch GitHub user information",
-        version: "1.0.0",
-        credits: {
-            dev: "Paras (Aotpy)",
-            contact: "https://t.me/Aotpy",
-            channel: "https://t.me/obitostuffs",
-            portfolio: "https://Aotpy.vercel.app"
-        },
         endpoints: {
             github_user: {
                 path: "/api/github",
@@ -22,9 +15,9 @@ module.exports = (req, res) => {
                 },
                 example: "/api/github?username=Aotpy",
                 response_format: {
-                    credits: {},
                     data: {},
-                    success: true
+                    success: true,
+                    credits: {}
                 }
             },
             homepage: {
@@ -34,8 +27,14 @@ module.exports = (req, res) => {
             }
         },
         usage: {
-            base_url: "https://info-github-api.vercel.app",
-            example_curl: "curl 'https://info-github-api.vercel.app/api/github?username=Aotpy'"
+            base_url: "https://info-tobi-api.vercel.app",
+            example_curl: "curl 'https://info-tobi-api.vercel.app/api/github?username=Aotpy'"
+        },
+        credits: {
+            dev: "Paras (Aotpy)",
+            contact: "https://t.me/Aotpy",
+            channel: "https://t.me/obitostuffs",
+            portfolio: "https://Aotpy.vercel.app"
         }
     });
 };
