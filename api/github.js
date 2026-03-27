@@ -55,7 +55,6 @@ module.exports = async (req, res) => {
                 contact: "https://t.me/Aotpy",
                 channel: "https://t.me/obitostuffs",
                 portfolio: "https://Aotpy.vercel.app",
-                api: "GitHub Info API v1.0"
             }
         };
 
